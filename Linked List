@@ -1,0 +1,122 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyObldzL1RNVyar1VB4kg3Df",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AquinoJester/CPE-201L-CPE-2-B/blob/main/Linked%20List\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 46,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xw20i5h-RTxV",
+        "outputId": "51d1e042-5ab8-4e70-e4eb-7ad69334fbf5"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original list:\n",
+            "A\n",
+            "B\n",
+            "C\n",
+            "D\n",
+            "After pop:\n",
+            "B\n",
+            "C\n",
+            "D\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Node class\n",
+        "class Node:\n",
+        "\n",
+        "    # Function to initialize the node object\n",
+        "    def __init__(self, data):\n",
+        "        self.data = data # Assign data\n",
+        "        self.next = None # Initialize\n",
+        "                        # next as null\n",
+        "\n",
+        "# Linked List class\n",
+        "class LinkedList:\n",
+        "\n",
+        "    # Function to initialize the Linked\n",
+        "    # List object\n",
+        "    def __init__(self):\n",
+        "        self.head = None\n",
+        "\n",
+        "    def print_data(self):\n",
+        "      current =self.head\n",
+        "      while current:\n",
+        "        print(current.data)\n",
+        "        current=current.next\n",
+        "\n",
+        "    def is_empty(self):\n",
+        "      return self.head is None\n",
+        "\n",
+        "    def pop(self):\n",
+        "      if self.is_empty():\n",
+        "        return \"Linked list is empty\"\n",
+        "      else:\n",
+        "        current = self.head\n",
+        "        self.head = current.next\n",
+        "        return current.data\n",
+        "\n",
+        "if __name__=='__main__':\n",
+        "# Start with the empty list\n",
+        "    llist = LinkedList()\n",
+        "\n",
+        "    llist.head = Node(\"A\")  #object name1\n",
+        "    second = Node(\"B\")        #object name2\n",
+        "    third = Node(\"C\")\n",
+        "    fourth = Node(\"D\")\n",
+        "\n",
+        "    llist.head.next = second # Link first node with second\n",
+        "    second.next = third # Link second node with the third node\n",
+        "    third.next = fourth #Link third to fourth\n",
+        "\n",
+        "    print(\"Original list:\")\n",
+        "    llist.print_data()\n",
+        "\n",
+        "    llist.pop()\n",
+        "    print(\"After pop:\")\n",
+        "    llist.print_data()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "mBd2qXSBaa9z"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
